@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="indexCSS " type="text/css" href = "index-Module/index.css">
+    <link rel="indexCSS " href="index-Module/index.js">
 
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
 
-        body{
+        body {
             background-color: gainsboro;
         }
 
         /* list 영역 */
-        #root{
+        #root {
             display: flex;
 
         }
-        #list{
+
+        #list {
             display: flex;
             flex-direction: column;
-            background-color:dimgray;
+            background-color: dimgray;
             width: 40vw;
             height: 100vh;
         }
 
-        
-        #result{
+
+        #result {
             margin: 10px;
             width: 50vw;
             height: 50vh;
-            border: 1px solid black;    
+            border: 1px solid black;
             background-color: white;
+        }
+
+        #result {
+            overflow: scroll;
 
         }
 
@@ -46,10 +52,11 @@
         /* chat 영역 */
     </style>
 </head>
+
 <body>
     <!-- 최상위 id -->
     <div id="root">
-         <!-- 왼쪽 목록 및 로그인 정보  -->
+        <!-- 왼쪽 목록 및 로그인 정보  -->
         <div id="list">
             <!-- 메시지 title -->
             <ul id="title">
@@ -59,22 +66,59 @@
             <!-- 로그인 정보 -->
             <div id="info">
                 신동현 <br>
-                <img src="https://static.wikia.nocookie.net/megamitensei/images/3/33/MorganaPQ2.png/revision/latest/scale-to-width/360?cb=20180901210700" alt="예시 이미지">
+                <img src="" alt="프로필 사진">
             </div>
         </div>
 
         <!-- 메시지 영역 -->
-        <div id="chat">
+        <div id="chatArea">
             <!-- 메시지 입력 결과 -->
             <div id="result">
-                <!-- 사용자가 입력했던 메시지 -->
+
             </div>
             <!-- 메시지 입력 화면 -->
             <label for="chat">메시지 입력</label>
             <input id="chat" type="text" value="메시지 입력">
-            <input id="send" type="button" value="전송">
+            <input id="send" type="button" value="입력">
         </div>
-
     </div>
+
+    <script>
+
+        // 채팅 영역
+        const result = document.getElementById("result");
+
+        const chat = document.getElementById("chat"); //메시지 내용
+        const send = document.getElementById("send"); //입력 버튼
+
+        chat.value = "";
+        const count = 0;
+
+
+        var input = document.getElementById("input");
+
+        send.addEventListener("click", function (event) {
+            if (chat.value === "") {
+                alert("내용을 입력해주세요!")
+                chat.focus();
+            } else {
+                const li = document.createElement("li");
+                li.textContent = chat.value;
+                result.appendChild(li);
+                chat.value = ""; //입력했던 채팅 내용 비우기
+                chat.focus(); //커서 입력창으로 이동
+            }
+        });
+
+
+
+    </script>
+    <!-- <script data-main="index.js" src="require.js"></script> -->
+
+    <!-- <script type="module">
+        import {sayHi} from './test.js';
+        document.body.innerHTML = sayHi('모듈화 성공');
+    </script> -->
 </body>
+
 </html>
