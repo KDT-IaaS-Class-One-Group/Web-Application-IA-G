@@ -6,25 +6,18 @@ const fs = require("fs") //fs 모듈을 사용하기 위한 선언(index.html �
 const server = http.createServer(app); //express 방식으로 서버 생성
 const port = 8080; //포트 미리 선언하여 사용
 
-// const io = socketIo(server);//소켓이 필요할지 안할지 나중에 구현하면 결정
-
+const css = "./Module/index.css"
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html")
 })
-
-app.get("/about", (req, res) => {
-    res.send("<h1> 테스트 메시지 </h1/>")
-})
-
 
 app.listen(port, () => {
     console.log("server open");
 })
 
 
-
-
+// const io = socketIo(server);//소켓이 필요할지 안할지 나중에 구현하면 결정
 
 //검증 코드
 // app.get("/", (req, res) => {
