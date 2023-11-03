@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="indexCSS " href="index-Module/index.js">
+    <link rel="indexCSS " href="test.css">
 
     <style>
         * {
@@ -14,7 +14,7 @@
         }
 
         body {
-            background-color: gainsboro;
+            /* background-color: gainsboro; */
         }
 
         /* list 영역 */
@@ -45,7 +45,22 @@
 
         }
 
+        #menu {
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            width: 25px;
+            height: auto;
 
+        }
+
+        #m1 {
+            border: 1px solid grey;
+            background-color: black;
+            width: 20px;
+            height: 3px;
+            margin: 0.5px;
+        }
 
 
 
@@ -54,37 +69,58 @@
 </head>
 
 <body>
-    <!-- 최상위 id -->
-    <div id="root">
-        <!-- 왼쪽 목록 및 로그인 정보  -->
-        <div id="list">
-            <!-- 메시지 title -->
-            <ul id="title">
-                내용 없음
-                <!-- 사용자가 입력했던 메시지 title -->
-            </ul>
-            <!-- 로그인 정보 -->
-            <div id="info">
-                신동현 <br>
-                <img src="" alt="프로필 사진">
+    <form action="/text" method="post">
+
+        <!-- 최상위 id -->
+        <div id="root">
+            <!-- 왼쪽 목록 및 로그인 정보  -->
+            <div id="list">
+                <div id="menu">
+                    <div id="m1"></div>
+                    <div id="m1"></div>
+                    <div id="m1"></div>
+                </div>
+
+
+                <!-- 메시지 title -->
+                <ul id="title">
+                    내용 없음
+                    <!-- 사용자가 입력했던 메시지 title -->
+                </ul>
+                <!-- 로그인 정보 -->
+                <div id="info">
+                    신동현 <br>
+                    <img src="" alt="프로필 사진">
+                </div>
+            </div>
+
+            <!-- 메시지 영역 -->
+            <div id="chatArea" name="chatArea">
+                <!-- 메시지 입력 결과 -->
+                <div id="result">
+
+                </div>
+                <!-- 메시지 입력 화면 -->
+                <label for="chat">메시지 입력</label>
+                <input id="chat" type="text" name="chat" value="메시지 입력">
+                <input id="send" type="button" name="send" value="입력">
             </div>
         </div>
 
-        <!-- 메시지 영역 -->
-        <div id="chatArea">
-            <!-- 메시지 입력 결과 -->
-            <div id="result">
 
-            </div>
-            <!-- 메시지 입력 화면 -->
-            <label for="chat">메시지 입력</label>
-            <input id="chat" type="text" value="메시지 입력">
-            <input id="send" type="button" value="입력">
-        </div>
-    </div>
-
+    </form>
     <script>
+        //햄버거 메뉴
+        const menu = document.getElementById("menu"); //햄버거 메뉴
 
+        //햄버거 메뉴 관련 이벤트
+        menu.addEventListener("click", () => {
+            alert("기능 추가 예정")
+
+        });
+
+
+        //////////////////////////////////////////////////////////////////////
         // 채팅 영역
         const result = document.getElementById("result");
 
@@ -94,9 +130,7 @@
         chat.value = "";
         const count = 0;
 
-
-        var input = document.getElementById("input");
-
+        //프롬프트 입력 처리 이벤트
         send.addEventListener("click", function (event) {
             if (chat.value === "") {
                 alert("내용을 입력해주세요!")
@@ -107,6 +141,7 @@
                 result.appendChild(li);
                 chat.value = ""; //입력했던 채팅 내용 비우기
                 chat.focus(); //커서 입력창으로 이동
+
             }
         });
 
