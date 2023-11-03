@@ -1,16 +1,13 @@
 const express = require('express'); // 서버 통신 방식 설계
 const app = express();  //express를 app 객체에 담아 사용하려는 목적
-const http = require("http");  //http 모듈을 사용하기 위한 선언
-const fs = require("fs") //fs 모듈을 사용하기 위한 선언(index.html 페이지와 통신하기 위한 규약)
+// const http = require("http");  //http 모듈을 사용하기 위한 선언
+// const fs = require("fs") //fs 모듈을 사용하기 위한 선언(index.html 페이지와 통신하기 위한 규약)
 
 
-const server = http.createServer(app); //express 방식으로 서버 생성
+// const server = http.createServer(app); //express 방식으로 서버 생성
 const port = 8080; //포트 미리 선언하여 사용
 
-const bodyParser = require('body-parser') //body에서 받은 데이터 파싱하여 처리
-
-
-const css = "./Module/index.css"
+// const bodyParser = require('body-parser') //body에서 받은 데이터 파싱하여 처리
 
 //서버 get으로 전달
 app.get("/", (req, res) => {
