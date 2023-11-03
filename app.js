@@ -1,4 +1,4 @@
-const express = required('express'); // 서버 통신 방식 설계
+const express = required('Express'); // 서버 통신 방식 설계
 const app = express();  //express를 app 객체에 담아 사용하려는 목적
 const http = required("http");  //http 모듈을 사용하기 위한 선언
 const fs = required("fs") //fs 모듈을 사용하기 위한 선언(index.html 페이지와 통신하기 위한 규약)
