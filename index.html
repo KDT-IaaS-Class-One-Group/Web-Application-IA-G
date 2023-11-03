@@ -6,8 +6,60 @@
     <title>Document</title>
     <link rel="indexCSS " type="text/css" href = "index-Module/index.css">
 
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: gainsboro;
+        }
+
+        #root{
+            display: flex;
+
+        }
+        #list{
+            display: flex;
+            flex-direction: column;
+            background-color:dimgray;
+            width: 40vw;
+            height: 100vh;
+        }
+
+
+    </style>
 </head>
 <body>
-    페이지 오픈 확인
+    <!-- 최상위 id -->
+    <div id="root">
+         <!-- 왼쪽 목록 및 로그인 정보  -->
+        <div id="list">
+            <!-- 메시지 title -->
+            <ul id="title">
+                내용 없음
+                <!-- 사용자가 입력했던 메시지 title -->
+            </ul>
+            <!-- 로그인 정보 -->
+            <div id="info">
+                신동현 <br>
+                <img src="https://static.wikia.nocookie.net/megamitensei/images/3/33/MorganaPQ2.png/revision/latest/scale-to-width/360?cb=20180901210700" alt="예시 이미지">
+            </div>
+        </div>
+
+        <!-- 메시지 영역 -->
+        <div id="chat">
+            <!-- 메시지 입력 결과 -->
+            <div id="result">
+                <!-- 사용자가 입력했던 메시지 -->
+            </div>
+            <!-- 메시지 입력 화면 -->
+            <label for="chat">메시지 입력</label>
+            <input id="chat" type="text" value="메시지 입력">
+            <input id="send" type="button" value="전송">
+        </div>
+
+    </div>
 </body>
 </html>
