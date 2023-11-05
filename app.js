@@ -35,9 +35,10 @@ app.post('/text', function(req,res){
     // const info = req.body.info;
     // const data = req.body.chat;
 
-
-
 })
+
+
+//post 작업 추가
 
 
 
