@@ -51,3 +51,6 @@ app.get("/initialData", (req, res) => {
 app.listen(port, () => {
     console.log("서버가 열렸습니다.");
 });
+
+
+//ver 0.2
