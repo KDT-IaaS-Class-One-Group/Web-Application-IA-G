@@ -109,12 +109,37 @@
 
 
     </form>
+
+
+
     <script>
+        // 구현된 과제
+        // 1. 서버(app.js)에서페이지(index.html)을 표시하는 응답을 전달(index.html)
+        // 2. 페이지(index.html)에서 메시지를 입력 했을 때 action: index.html전달과 mothod : post 방식으로 서버에 전달
+
+
+        // 남은과제    
+        // 1. index.html에서 메시지를 입력했을 때 app.js로 받는 방식(express, post 방식);
+        // 메시지 입력 후 reslut에 표시되는게 아니라 서버(app.js)쪽에 json 형식으로 전달 되는지 확인
+
+        // 2. app.js에서 json으로 변환 후 형식에 맞게 데이터가 계속 추가되는 과정
+        // 서버(app.js)에서 body 데이터를 받고 파싱하는 과정확인
+
+        // 3. data.json에서 (유저명), (메시지), (시간) 등이 형식에 맞게 잘 저장되는지 확인
+        // 서버에서 파싱된 데이터가 어떻게 저장되는지 확인
+
+        // 4. data.json에서 (유저명), (메시지), (시간) 등이 저장되어있는데 다시 서버로 전달하는지 확인
+        // data.js에서 받은 데이터가 서버에서 어떤 처리로 다시 index.html로 넘겨주는지 확인
+
+        // 5. app.js에서 다시 index.html(express, post 방식)으로 데이터 전달 후 출력 되는지 확인
+        // 적제 적소로 데이터가 잘 표시되는지 확인
+
+
         const result = document.getElementById("result");
         const chat = document.getElementById("chat");
         const send = document.getElementById("send");
 
-        // ...
+        // 입력한 데이터를 data.json으로 key의 맞춰 전송
 
         send.addEventListener("click", function (event) {
             if (chat.value === "") {
@@ -129,6 +154,12 @@
                     timestamp: timestamp
                 };
 
+                // 전달되는 데이터 확인용
+                // console.log("메시지 전송 확인 message", message);
+                // console.log("메시지 전송 확인 time", timestamp);
+                // console.log("메시지 전송 확인 chatData", chatData);
+
+
                 // JSON 데이터를 서버로 전송
                 fetch("/text", {
                     method: "POST",
@@ -141,26 +172,35 @@
                     .then(data => {
                         // 서버에서 전달된 응답 처리 (필요하면)
                         console.log(data);
+
+
                     });
 
                 const li = document.createElement("li");
-                li.textContent = chat.value;
+                li.textContent = chat.value + message ;
                 result.appendChild(li);
                 chat.value = "";
                 chat.focus();
+
+
+
+
             }
+
+
+            // html 메시지를 표시하기위한 코드
+            function appendMessage(type, message, timestamp) {
+                li.textContent = message;
+                result.appendChild(li);
+
+                console.log(message);
+            }
+
         });
 
 
 
-        // html 메시지를 표시하기위한 코드
-        function appendMessage(type, message, timestamp) {
-        const li = document.createElement("li");
-        li.textContent = message;
-        result.appendChild(li);
 
-        console.log(message);
-    }
 
 
     </script>

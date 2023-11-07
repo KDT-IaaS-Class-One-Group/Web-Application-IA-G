@@ -26,7 +26,12 @@ app.post('/text', (req, res) => {
                     console.error(err);
                     res.status(500).send("서버 오류");
                 } else {
-                    res.json({ message: "데이터가 저장되었습니다." });
+                    res.json({ message: "데이터 저장 확인" });
+
+                    //html message 전송 내용 확인
+                    const jsonData = JSON.parse(data);
+                    res.json(jsonData);
+
                 }
             });
         }
@@ -34,20 +39,22 @@ app.post('/text', (req, res) => {
 });
 
 //html 페이지 메시지 내역을 표시하기 위한 코드
-app.get("/initialData", (req, res) => {
-    fs.readFile('data.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-            res.status(500).send("서버 오류");
-        } else {
-            const jsonData = JSON.parse(data);
-            res.json(jsonData);
-        }
-    });
-});
+// app.get("/initialData", (req, res) => {
+//     fs.readFile('data.json', 'utf8', (err, data) => {
+//         if (err) {
+//             console.error(err);
+//             res.status(500).send("서버 오류");
+//         } else {
+//             const jsonData = JSON.parse(data);
+//             res.json(jsonData);
+//         }
+//     });
+// });
 
 
 
 app.listen(port, () => {
     console.log("서버가 열렸습니다.");
 });
+
+
