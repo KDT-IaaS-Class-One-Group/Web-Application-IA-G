@@ -26,7 +26,7 @@ app.post('/text', (req, res) => {
                     console.error(err);
                     res.status(500).send("서버 오류");
                 } else {
-                    res.json({ message: "데이터 저장 확인" });
+                    res.json({ message: "data.json에서 전송할 message" });
 
                     //html message 전송 내용 확인
                     const jsonData = JSON.parse(data);
