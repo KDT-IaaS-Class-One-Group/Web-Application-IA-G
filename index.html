@@ -110,50 +110,62 @@
 
     </form>
     <script>
-        //햄버거 메뉴
-        const menu = document.getElementById("menu"); //햄버거 메뉴
-
-        //햄버거 메뉴 관련 이벤트
-        menu.addEventListener("click", () => {
-            alert("기능 추가 예정")
-
-        });
-
-
-        //////////////////////////////////////////////////////////////////////
-        // 채팅 영역
         const result = document.getElementById("result");
+        const chat = document.getElementById("chat");
+        const send = document.getElementById("send");
 
-        const chat = document.getElementById("chat"); //메시지 내용
-        const send = document.getElementById("send"); //입력 버튼
+        // ...
 
-        chat.value = "";
-        const count = 0;
-
-        //프롬프트 입력 처리 이벤트
         send.addEventListener("click", function (event) {
             if (chat.value === "") {
-                alert("내용을 입력해주세요!")
+                alert("내용을 입력해주세요!");
                 chat.focus();
             } else {
+                const message = chat.value;
+                const timestamp = new Date().toLocaleTimeString();
+                const chatData = {
+                    type: "user",
+                    message: message,
+                    timestamp: timestamp
+                };
+
+                // JSON 데이터를 서버로 전송
+                fetch("/text", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(chatData)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        // 서버에서 전달된 응답 처리 (필요하면)
+                        console.log(data);
+                    });
+
                 const li = document.createElement("li");
                 li.textContent = chat.value;
                 result.appendChild(li);
-                chat.value = ""; //입력했던 채팅 내용 비우기
-                chat.focus(); //커서 입력창으로 이동
-
+                chat.value = "";
+                chat.focus();
             }
         });
 
 
 
-    </script>
-    <!-- <script data-main="index.js" src="require.js"></script> -->
+        // html 메시지를 표시하기위한 코드
+        function appendMessage(type, message, timestamp) {
+        const li = document.createElement("li");
+        li.textContent = message;
+        result.appendChild(li);
 
-    <!-- <script type="module">
-        import {sayHi} from './test.js';
-        document.body.innerHTML = sayHi('모듈화 성공');
-    </script> -->
+        console.log(message);
+    }
+
+
+    </script>
+
+
 </body>
 
 </html>
