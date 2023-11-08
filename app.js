@@ -56,9 +56,3 @@ app.post('/text', (req, res) => {
 app.listen(port, () => {
     console.log("서버가 열렸습니다.");
 });
-
-
-<<<<<<< HEAD
-=======
-//ver 0.2
->>>>>>> main
