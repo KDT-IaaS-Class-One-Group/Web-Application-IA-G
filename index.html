@@ -177,7 +177,7 @@
                     });
 
                 const li = document.createElement("li");
-                li.textContent = chat.value + message ;
+                li.textContent =  chatData.message + chatData.timestamp;
                 result.appendChild(li);
                 chat.value = "";
                 chat.focus();

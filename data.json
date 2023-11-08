@@ -15,6 +15,31 @@
         "type": "user",
         "message": "How does OpenAI work?",
         "timestamp": "10:23 AM"
+      },
+      {
+        "type": "user",
+        "message": "123",
+        "timestamp": "오후 12:33:42"
+      },
+      {
+        "type": "user",
+        "message": "aaaa",
+        "timestamp": "오후 12:33:44"
+      },
+      {
+        "type": "user",
+        "message": "메시지 입력sadfsaf",
+        "timestamp": "오후 12:34:17"
+      },
+      {
+        "type": "user",
+        "message": "asdfasdf",
+        "timestamp": "오후 12:34:19"
+      },
+      {
+        "type": "user",
+        "message": "ㅎㅇㅎㅇ",
+        "timestamp": "오후 12:35:28"
       }
     ],
     "userInfo": {

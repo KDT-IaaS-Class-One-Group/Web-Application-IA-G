@@ -28,9 +28,10 @@ app.post('/text', (req, res) => {
                 } else {
                     res.json({ message: "data.json에서 전송할 message" });
 
-                    //html message 전송 내용 확인
+                    
+                    // html message 전송 내용 확인
                     const jsonData = JSON.parse(data);
-                    res.json(jsonData);
+                    // res.json(jsonData);
 
                 }
             });
