@@ -1,1 +1,26 @@
-{"header":{"hamburgerMenu":["Home","Profile","Settings","Logout"],"logo":"🌐","promptInputPlaceholder":"Enter your message here..."},"mainContent":{"inputRecords":[{"type":"user","message":"How does OpenAI work?","timestamp":"10:23 AM"},{"type":"assistant","message":"OpenAI is a machine learning model...","timestamp":"10:24 AM"},{"type":"user","message":"메시지 입력asdf","timestamp":"오후 2:24:40"},{"type":"user","message":"메시지 입력sadfadsf","timestamp":"오후 2:39:11"},{"type":"user","message":"ㅎㅇㅎㅇㅎ","timestamp":"오후 2:39:27"},{"type":"user","message":"메시지 입ㅇㅇㅇ력","timestamp":"오후 2:40:26"},{},{"type":"user","message":"개빡셈","timestamp":"오후 3:01:32"}],"userInfo":{"name":"John Doe","status":"Online","avatar":"👤"}}}
+{
+  "header": {
+    "hamburgerMenu": [
+      "Home",
+      "Profile",
+      "Settings",
+      "Logout"
+    ],
+    "logo": "🌐",
+    "promptInputPlaceholder": "Enter your message here..."
+  },
+  "mainContent": {
+    "inputRecords": [
+      {
+        "type": "user",
+        "message": "How does OpenAI work?",
+        "timestamp": "10:23 AM"
+      }
+    ],
+    "userInfo": {
+      "name": "John Doe",
+      "status": "Online",
+      "avatar": "👤"
+    }
+  }
+}

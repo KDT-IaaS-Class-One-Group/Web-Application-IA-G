@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs'); // fs 모듈을 불러옵니다.
 const app = express();
-const port = 8080;
+const port = 1004;
 
 app.use(express.json());
 
