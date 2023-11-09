@@ -50,6 +50,143 @@
         "type": "user",
         "message": "123123123",
         "timestamp": "오후 12:43:28"
+      },
+      {
+        "type": "user",
+        "message": "메시지 gd",
+        "timestamp": "오후 2:57:43"
+      },
+      {
+        "type": "user",
+        "message": "메시지 입력dfdf",
+        "timestamp": "오후 3:06:41"
+      },
+      {
+        "type": "user",
+        "message": "안녕하세요!",
+        "timestamp": "오후 3:31:47"
+      },
+      {
+        "type": "user",
+        "message": "메시지 ㅎㅇ",
+        "timestamp": "오후 3:48:30",
+        "userInfo": {
+          "name": "John Doe",
+          "status": "Online",
+          "avatar": "👤"
+        }
+      },
+      {
+        "type": "user",
+        "message": "ㅎㅇ",
+        "timestamp": "오후 3:48:33",
+        "userInfo": {
+          "name": "John Doe",
+          "status": "Online",
+          "avatar": "👤"
+        }
+      },
+      {
+        "type": "user",
+        "message": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+        "timestamp": "오후 3:48:36",
+        "userInfo": {
+          "name": "John Doe",
+          "status": "Online",
+          "avatar": "👤"
+        }
+      },
+      {
+        "type": "user",
+        "message": "메시지 ㅎㅇ",
+        "timestamp": "오후 3:49:40",
+        "userInfo": {
+          "name": "John Doe",
+          "status": "Online",
+          "avatar": "👤"
+        }
+      },
+      {},
+      {
+        "type": "user",
+        "message": "안녕하세요",
+        "timestamp": "오후 3:52:26",
+        "userInfo": {
+          "name": "John Doe",
+          "status": "Online",
+          "avatar": "👤"
+        }
+      },
+      {
+        "type": "user",
+        "message": "테스트 메시지",
+        "timestamp": "오후 3:52:37",
+        "userInfo": {
+          "name": "John Doe",
+          "status": "Online",
+          "avatar": "👤"
+        }
+      },
+      {
+        "type": "user",
+        "message": "ㅎㅇㅎㅇ",
+        "timestamp": "오후 4:05:01"
+      },
+      {
+        "type": "user",
+        "message": "이 데이터 추가 됨?",
+        "timestamp": "오후 4:05:15"
+      },
+      {
+        "type": "user",
+        "message": "데이터 전송",
+        "timestamp": "오후 4:19:13"
+      },
+      {
+        "type": "user",
+        "message": "메시지 ㅎㅇ",
+        "timestamp": "오후 4:22:46"
+      },
+      {
+        "type": "user",
+        "message": "이거 추가 되냐?",
+        "timestamp": "오후 4:25:29"
+      },
+      {
+        "type": "user",
+        "message": "되냐!!",
+        "timestamp": "오후 4:26:04"
+      },
+      {
+        "type": "user",
+        "message": "이 메시지 추가 됨?",
+        "timestamp": "오후 4:42:32"
+      },
+      {
+        "type": "user",
+        "message": "ㅎㅎㅎㅎ",
+        "timestamp": "오후 4:44:16"
+      },
+      {
+        "type": "user",
+        "message": "메시지 gdgd",
+        "timestamp": "오후 4:46:17"
+      },
+      {
+        "type": "user",
+        "message": "추가되냐?",
+        "timestamp": "오후 4:48:12"
+      },
+      {
+        "type": "user",
+        "message": "ㅎㅇㅎㅇ",
+        "timestamp": "오후 4:52:13"
+      },
+      {},
+      {
+        "type": "user",
+        "message": "12312133",
+        "timestamp": "오후 4:57:24"
       }
     ],
     "userInfo": {

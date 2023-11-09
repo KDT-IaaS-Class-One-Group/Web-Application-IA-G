@@ -114,92 +114,103 @@
 
     <script>
         // 구현된 과제
-        // 1. 서버(app.js)에서페이지(index.html)을 표시하는 응답을 전달(index.html)
-        // 2. 페이지(index.html)에서 메시지를 입력 했을 때 action: index.html전달과 mothod : post 방식으로 서버에 전달
+        // 1. 서버(app.js)에서 페이지(index.html)을 표시하는 응답을 전달(index.html)
+        // 2. 페이지(index.html)에서 메시지를 입력 했을 때 action: index.html로 전달되며, method: POST 방식으로 서버에 전달
 
+        // 남은 과제    
+        // 1. index.html에서 메시지를 입력했을 때 app.js로 받는 방식(express, POST 방식);
+        // 메시지 입력 후 result에 표시되는 게 아니라 서버(app.js)쪽에 JSON 형식으로 전달되는지 확인
 
-        // 남은과제    
-        // 1. index.html에서 메시지를 입력했을 때 app.js로 받는 방식(express, post 방식);
-        // 메시지 입력 후 reslut에 표시되는게 아니라 서버(app.js)쪽에 json 형식으로 전달 되는지 확인
-
-        // 2. app.js에서 json으로 변환 후 형식에 맞게 데이터가 계속 추가되는 과정
-        // 서버(app.js)에서 body 데이터를 받고 파싱하는 과정확인
+        // 2. app.js에서 JSON으로 변환 후 형식에 맞게 데이터가 계속 추가되는 과정
+        // 서버(app.js)에서 body 데이터를 받고 파싱하는 과정 확인
 
         // 3. data.json에서 (유저명), (메시지), (시간) 등이 형식에 맞게 잘 저장되는지 확인
         // 서버에서 파싱된 데이터가 어떻게 저장되는지 확인
 
-        // 4. data.json에서 (유저명), (메시지), (시간) 등이 저장되어있는데 다시 서버로 전달하는지 확인
+        // 4. data.json에서 (유저명), (메시지), (시간) 등이 저장되어 있지만 다시 서버로 전달되는지 확인
         // data.js에서 받은 데이터가 서버에서 어떤 처리로 다시 index.html로 넘겨주는지 확인
 
-        // 5. app.js에서 다시 index.html(express, post 방식)으로 데이터 전달 후 출력 되는지 확인
-        // 적제 적소로 데이터가 잘 표시되는지 확인
+        // 5. app.js에서 다시 index.html(express, POST 방식)으로 데이터 전달 후 출력되는지 확인
+        // 적절한 위치에 데이터가 잘 표시되는지 확인
 
 
+
+        // 결과를 표시할 HTML 엘리먼트를 'result' 변수에 저장
         const result = document.getElementById("result");
+
+        // 사용자가 입력한 메시지를 'chat' 변수에 저장
         const chat = document.getElementById("chat");
+
+        // 메시지 전송 버튼을 'send' 변수에 저장
         const send = document.getElementById("send");
 
-        // 입력한 데이터를 data.json으로 key의 맞춰 전송
-
+        // 메시지 전송 버튼에 클릭 이벤트 리스너 추가
         send.addEventListener("click", function (event) {
+            // 만약 입력된 메시지가 비어있으면 경고 메시지 표시 및 입력 필드에 포커스
             if (chat.value === "") {
                 alert("내용을 입력해주세요!");
                 chat.focus();
             } else {
+                // 입력된 메시지와 현재 시간을 변수에 저장
                 const message = chat.value;
                 const timestamp = new Date().toLocaleTimeString();
+
+                // 'chatData' 객체에 사용자 메시지, 타입, 및 타임스탬프를 저장
                 const chatData = {
                     type: "user",
                     message: message,
                     timestamp: timestamp
                 };
 
-                // 전달되는 데이터 확인용
+                // 전달되는 데이터 확인용 주석
                 // console.log("메시지 전송 확인 message", message);
                 // console.log("메시지 전송 확인 time", timestamp);
                 // console.log("메시지 전송 확인 chatData", chatData);
 
-
-                // JSON 데이터를 서버로 전송
+                // 'fetch' 함수를 사용하여 JSON 데이터를 서버로 전송
                 fetch("/text", {
-                    method: "POST",
+                    method: "POST", // POST 메소드를 사용하여 데이터를 전송
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json" // JSON 형식으로 데이터 전송을 선언
                     },
-                    body: JSON.stringify(chatData)
+                    body: JSON.stringify(chatData) // 'chatData' 객체를 JSON 문자열로 변환하여 전송
                 })
-                    .then(response => response.json())
+                    .then(response => response.json()) // 서버에서 전달된 응답을 JSON으로 파싱
                     .then(data => {
-                        // 서버에서 전달된 응답 처리 (필요하면)
+                        // 서버에서 전달된 응답을 처리 (필요한 경우)
                         console.log(data);
-
-
+                        messageOutput(data)
                     });
-
-                const li = document.createElement("li");
-                li.textContent =  chatData.message + chatData.timestamp;
-                result.appendChild(li);
-                chat.value = "";
-                chat.focus();
-
-
-
-
             }
-
-
-            // html 메시지를 표시하기위한 코드
-            function appendMessage(type, message, timestamp) {
-                li.textContent = message;
-                result.appendChild(li);
-
-                console.log(message);
-            }
-
-        });
+        }
+        );
 
 
 
+        function messageOutput(data) {
+            fetch("/data.json")
+                .then(response => response.json())
+                .then(data => {
+                    const inputRecords = data.mainContent.inputRecords
+                    const chatArea = document.getElementById("chatArea")
+                    chatArea.innerHTML = inputRecords = inputRecords.map((record) =>
+                        `<p>${record.type} : ${record.message} ${record.timestamp}</p>`).join("");
+                })
+        }
+
+
+                // // 새로운 메시지를 표시할 리스트 엘리먼트 생성
+                // const li = document.createElement("li");
+
+                // // 리스트 엘리먼트에 사용자 타입, 메시지, 및 타임스탬프를 텍스트로 추가
+                // li.textContent = chatData.type + " : " + chatData.message + "[" + chatData.timestamp + "]";
+
+                // // 결과를 표시하는 부분에 새로운 리스트 엘리먼트 추가
+                // result.appendChild(li);
+
+                // // 입력 필드를 비우고 포커스를 다시 설정
+                // chat.value = "";
+                // chat.focus();
 
 
 
