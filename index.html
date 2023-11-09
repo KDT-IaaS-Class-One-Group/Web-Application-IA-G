@@ -133,6 +133,79 @@
 
         // 5. app.js에서 다시 index.html(express, post 방식)으로 데이터 전달 후 출력 되는지 확인
         // 적제 적소로 데이터가 잘 표시되는지 확인
+<<<<<<< HEAD
+=======
+
+
+        const result = document.getElementById("result");
+        const chat = document.getElementById("chat");
+        const send = document.getElementById("send");
+
+        // 입력한 데이터를 data.json으로 key의 맞춰 전송
+
+        send.addEventListener("click", function (event) {
+            if (chat.value === "") {
+                alert("내용을 입력해주세요!");
+                chat.focus();
+            } else {
+                const message = chat.value;
+                const timestamp = new Date().toLocaleTimeString();
+                const chatData = {
+                    type: "user",
+                    message: message,
+                    timestamp: timestamp
+                };
+
+                // 전달되는 데이터 확인용
+                // console.log("메시지 전송 확인 message", message);
+                // console.log("메시지 전송 확인 time", timestamp);
+                // console.log("메시지 전송 확인 chatData", chatData);
+
+
+                // JSON 데이터를 서버로 전송
+                fetch("/text", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(chatData)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        // 서버에서 전달된 응답 처리 (필요하면)
+                        console.log(data);
+
+
+                    });
+
+                const li = document.createElement("li");
+                li.textContent =  chatData.type + " : " + chatData.message + "[" + chatData.timestamp + "]";
+                result.appendChild(li);
+                chat.value = "";
+                chat.focus();
+
+
+
+
+            }
+
+
+            // html 메시지를 표시하기위한 코드
+            function appendMessage(type, message, timestamp) {
+                li.textContent = message;
+                result.appendChild(li);
+
+                console.log(message);
+            }
+
+        });
+
+
+
+
+
+
+>>>>>>> server2
     </script>
 
 
