@@ -5,6 +5,7 @@ const port = 1004;
 const router = require('./routes')
 
 app.use(express.json());
+app.use(express.static('public'))//public 폴더 안에 있는 모듈 서빙
 
 
 app.use("/", router);
