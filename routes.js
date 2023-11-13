@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
 
-router.post('/text', (req, res) => {
+router.post('/data', (req, res) => {
     const chatData = req.body;
 
     // 서버에서 수행할 작업 (필요한 경우)
@@ -37,8 +37,9 @@ router.post('/text', (req, res) => {
     });
 
 
-
+    //
     router.get('/data', (req, res) => {
+
         fs.readFile('data.json', 'utf8', (err, data) => {
             if (err) {
                 console.error(err);

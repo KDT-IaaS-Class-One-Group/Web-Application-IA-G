@@ -115,7 +115,7 @@
                 };
 
                 // JSON 데이터를 서버로 전송
-                fetch("/text", {
+                fetch("/data", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -124,8 +124,12 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    // 서버에서 전달된 응답 처리 (필요하면)
-                    console.log(data);
+
+
+
+
+                    
+
                 });
 
                 const li = document.createElement("li");
@@ -136,6 +140,9 @@
             }
         });
 
+
+
+        //data.json에서 채팅 내용을 불러오는 구간
         function fetchDataAndUpdateUI() {
             fetch("/data")
             .then(response => response.json())
