@@ -7,20 +7,11 @@ const router = require('./routes')
 app.use(express.json());
 
 
-app.use("/", router);
 
-//html 페이지 메시지 내역을 표시하기 위한 코드
-// app.get("/initialData", (req, res) => {
-//     fs.readFile('data.json', 'utf8', (err, data) => {
-//         if (err) {
-//             console.error(err);
-//             res.status(500).send("서버 오류");
-//         } else {
-//             const jsonData = JSON.parse(data);
-//             res.json(jsonData);
-//         }
-//     });
-// });
+// 정적 파일 제공
+app.use(express.static('public'));
+
+app.use("/", router);
 
 
 
