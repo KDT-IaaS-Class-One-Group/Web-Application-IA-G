@@ -1,1 +1,56 @@
-{"header":{"hamburgerMenu":["Home","Profile","Settings","Logout"],"logo":"🌐","promptInputPlaceholder":"Enter your message here..."},"mainContent":{"inputRecords":[{"type":"user","message":"How does OpenAI work?","timestamp":"10:23 AM"},{"type":"user","message":"gd","timestamp":"오후 4:37:25"},{"type":"user","message":"d","timestamp":"오후 4:39:40"},{"type":"user","message":"이거 테스트 메시지임!","timestamp":"오후 5:59:47"},{"type":"user","message":"끝났다!","timestamp":"오후 5:59:54"},{"type":"user","message":"gkdl","timestamp":"오후 6:01:41"},{"type":"user","message":"이거 되는건가?","timestamp":"오후 6:01:54"}],"userInfo":{"name":"John Doe","status":"Online","avatar":"👤"}}}
+{
+  "header": {
+    "hamburgerMenu": [
+      "Home",
+      "Profile",
+      "Settings",
+      "Logout"
+    ],
+    "logo": "🌐",
+    "promptInputPlaceholder": "Enter your message here..."
+  },
+  "mainContent": {
+    "inputRecords": [
+      {
+        "type": "user",
+        "message": "How does OpenAI work?",
+        "timestamp": "10:23 AM"
+      },
+      {
+        "type": "user",
+        "message": "gd",
+        "timestamp": "오후 4:37:25"
+      },
+      {
+        "type": "user",
+        "message": "d",
+        "timestamp": "오후 4:39:40"
+      },
+      {
+        "type": "user",
+        "message": "이거 테스트 메시지임!",
+        "timestamp": "오후 5:59:47"
+      },
+      {
+        "type": "user",
+        "message": "끝났다!",
+        "timestamp": "오후 5:59:54"
+      },
+      {
+        "type": "user",
+        "message": "gkdl",
+        "timestamp": "오후 6:01:41"
+      },
+      {
+        "type": "user",
+        "message": "이거 되는건가?",
+        "timestamp": "오후 6:01:54"
+      }
+    ],
+    "userInfo": {
+      "name": "John Doe",
+      "status": "Online",
+      "avatar": "👤"
+    }
+  }
+}
