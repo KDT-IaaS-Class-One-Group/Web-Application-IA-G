@@ -1,1 +1,31 @@
-{"header":{"hamburgerMenu":["Home","Profile","Settings","Logout"],"logo":"🌐","promptInputPlaceholder":"Enter your message here..."},"mainContent":{"inputRecords":[{"type":"user","message":"How does OpenAI work?","timestamp":"10:23 AM"},{"type":"user","message":"채팅 보기","timestamp":"오후 12:05:54"},{"type":"user","message":"ㅎㅇ","timestamp":"오후 12:08:51"},{"type":"user","message":"ㅎㅎㅇ","timestamp":"오후 12:11:22"},{"type":"user","message":"똑같은데?","timestamp":"오후 12:11:46"},{"type":"user","message":"뭔가 이상한데","timestamp":"오후 12:12:27"},{"type":"user","message":"괄호는 왜 변경되지?","timestamp":"오후 12:12:43"},{"type":"user","message":"ㅇㅇㅇ","timestamp":"오후 12:12:50"},{"type":"user","message":"이게 맞나","timestamp":"오후 12:13:38"},{"type":"user","message":"gd","timestamp":"오후 12:18:31"},{"type":"user","message":"d","timestamp":"오후 12:18:42"}],"userInfo":{"name":"John Doe","status":"Online","avatar":"👤"}}}
+{
+  "header": {
+    "hamburgerMenu": [
+      "Home",
+      "Profile",
+      "Settings",
+      "Logout"
+    ],
+    "logo": "🌐",
+    "promptInputPlaceholder": "Enter your message here..."
+  },
+  "mainContent": {
+    "inputRecords": [
+      {
+        "type": "user",
+        "message": "How does OpenAI work?",
+        "timestamp": "10:23 AM"
+      },
+      {
+        "type": "user",
+        "message": "채팅 보기",
+        "timestamp": "오후 12:05:54"
+      }
+    ],
+    "userInfo": {
+      "name": "John Doe",
+      "status": "Online",
+      "avatar": "👤"
+    }
+  }
+}
