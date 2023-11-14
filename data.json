@@ -45,6 +45,21 @@
         "type": "user",
         "message": "이거 되는건가?",
         "timestamp": "오후 6:01:54"
+      },
+      {
+        "type": "user",
+        "message": "이거 왜 안되지",
+        "timestamp": "오전 10:29:52"
+      },
+      {
+        "type": "user",
+        "message": "하이하이",
+        "timestamp": "오전 10:36:10"
+      },
+      {
+        "type": "user",
+        "message": "이거 오늘 메시지임!",
+        "timestamp": "오전 10:36:16"
       }
     ],
     "userInfo": {

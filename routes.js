@@ -1,10 +1,13 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
-const fs = require("fs");
+const fs = require('fs');
+const path = require('path'); // 이 줄을 추가
 
+// 'public' 디렉터리에서 정적 파일 제공
+// router.use(express.static(path.join(__dirname, 'public')));
 
-router.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
+router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 router.post('/data', (req, res) => {
@@ -15,47 +18,41 @@ router.post('/data', (req, res) => {
     fs.readFile('data.json', 'utf8', (err, data) => {
         if (err) {
             console.error(err);
-            res.status(500).send("서버 오류");
+            res.status(500).send('서버 오류');
         } else {
             const jsonData = JSON.parse(data);
             jsonData.mainContent.inputRecords.push(chatData);
             fs.writeFile('data.json', JSON.stringify(jsonData), 'utf8', (err) => {
                 if (err) {
                     console.error(err);
-                    res.status(500).send("서버 오류");
+                    res.status(500).send('서버 오류');
                 } else {
                     // res.json({ message: "data.json에서 전송할 message" });
 
-
                     // html message 전송 내용 확인
-                    const jsonData = JSON.parse(data);
+                    // const jsonData = JSON.parse(data);
                     // res.json(jsonData);
-
                 }
             });
         }
     });
 
-
-    //
     router.get('/data', (req, res) => {
-
         fs.readFile('data.json', 'utf8', (err, data) => {
             if (err) {
                 console.error(err);
-                res.status(500).send("서버 오류");
+                res.status(500).send('서버 오류');
             } else {
                 const jsonData = JSON.parse(data);
                 const selectedData = {
                     hamburgerMenu: jsonData.header.hamburgerMenu,
                     inputRecords: jsonData.mainContent.inputRecords,
-                    userInfo: jsonData.mainContent.userInfo
+                    userInfo: jsonData.mainContent.userInfo,
                 };
                 res.json(selectedData);
             }
         });
     });
-
 });
 
-module.exports = router
+module.exports = router;

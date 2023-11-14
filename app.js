@@ -8,8 +8,8 @@ app.use(express.json());
 
 
 
-// 정적 파일 제공
-app.use(express.static('public'));
+// public 폴더에 정적 파일 제공
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/", router);
 
